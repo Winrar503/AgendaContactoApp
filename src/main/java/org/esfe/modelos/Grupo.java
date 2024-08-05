@@ -19,6 +19,9 @@ public class Grupo {
     @NotBlank(message = "La descripción es requerida")
     private String descripcion;
 
+    @ManyToMany(mappedBy = "grupos")
+    private Set<Docente> docentes = new HashSet<>();
+
     public Integer getId() {
         return id;
     }
